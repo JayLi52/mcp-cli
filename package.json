@@ -1,5 +1,5 @@
 {
-	"name": "@higress/mcp-cli",
+	"name": "mcpcli",
 	"version": "1.0.0",
 	"type": "commonjs",
 	"private": false,
