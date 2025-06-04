@@ -2,6 +2,26 @@
 
 > 本项目基于 [smithery-ai/cli](https://github.com/smithery-ai/cli) 开发，主要增加了新的命令并修改了原有的 install 命令。
 
+## Useage
+```bash
+# sse mcp server
+npx mcp-installer install --client cline sse-mcp-server --config '{"url": "http://localhost:3000/sse"}'
+
+# sse mcp server
+npx mcp-installer install --client cline amap-sse --config '{
+  "url": "https://mcp.amap.com/sse?key=您在高德官网上申请的key"
+}'
+
+# stdio mcp server
+npx mcp-installer install --client cline amap-stdio --config '{
+  "command": "npx",
+  "args": ["-y", "@amap/amap-maps-mcp-server"],
+  "env": {
+    "AMAP_MAPS_API_KEY": "您在高德官网上申请的key"
+  }
+}
+```
+
 The Smithery registry installer and manager for Model Context Protocol (MCP) servers, designed to be client-agnostic.
 
 ## Requirements
