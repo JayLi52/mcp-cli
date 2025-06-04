@@ -281,7 +281,7 @@ export async function inspectServer(
 			command: "npx",
 			args: [
 				"-y",
-				"@smithery/cli@latest",
+				"mcp-installer@latest",
 				"run",
 				qualifiedName,
 				"--config",

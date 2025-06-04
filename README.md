@@ -8,7 +8,7 @@ The Smithery registry installer and manager for Model Context Protocol (MCP) ser
 ## Usage
 
 ```bash
-npx @smithery/cli <command>
+npx mcp-installer <command>
 ```
 
 ### Available Commands
@@ -30,31 +30,31 @@ npx @smithery/cli <command>
 
 ```bash
 # Install a server (requires --client flag)
-npx @smithery/cli install mcp-obsidian --client claude
+npx mcp-installer install mcp-obsidian --client claude
 
 # Install a server with pre-configured data (skips prompts)
-npx @smithery/cli install mcp-obsidian --client claude --config '{"vaultPath":"path/to/vault"}'
+npx mcp-installer install mcp-obsidian --client claude --config '{"vaultPath":"path/to/vault"}'
 
 # Remove a server
-npx @smithery/cli uninstall mcp-obsidian --client claude
+npx mcp-installer uninstall mcp-obsidian --client claude
 
 # List available clients
-npx @smithery/cli list clients
+npx mcp-installer list clients
 
 # List installed servers for claude
-npx @smithery/cli list servers --client claude
+npx mcp-installer list servers --client claude
 
 # Inspect a specific server from smithery's registry
-npx @smithery/cli inspect mcp-obsidian
+npx mcp-installer inspect mcp-obsidian
 
 # Run a server with configuration
-npx @smithery/cli run mcp-obsidian --config '{"key":"value"}'
+npx mcp-installer run mcp-obsidian --config '{"key":"value"}'
 
 # Show help menu
-npx @smithery/cli --help
+npx mcp-installer --help
 
 # Install with verbose logging for debugging
-npx @smithery/cli install mcp-obsidian --client claude --verbose
+npx mcp-installer install mcp-obsidian --client claude --verbose
 ```
 
 ### Important Notes
@@ -66,7 +66,7 @@ npx @smithery/cli install mcp-obsidian --client claude --verbose
 
 ## Development
 
-This guide will help you get started with developing for @smithery/cli.
+This guide will help you get started with developing for mcp-installer.
 
 ### Getting Started
 
