@@ -391,7 +391,7 @@ export function formatServerConfig(
 	profile: string | undefined,
 ): ConfiguredServer {
 	// Base arguments for npx command
-	const npxArgs = ["-y", "mcp-installer@latest", "run", qualifiedName]
+	const npxArgs = ["-y", "@smithery/cli@latest", "run", qualifiedName]
 
 	// Add API key if provided
 	if (apiKey) {
