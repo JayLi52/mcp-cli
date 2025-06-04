@@ -1,4 +1,4 @@
-# Smithery CLI ![NPM Version](https://img.shields.io/npm/v/%40smithery%2Fcli) ![NPM Downloads](https://img.shields.io/npm/dt/%40smithery%2Fcli)
+# Mcp-Installer ![NPM Version](https://img.shields.io/npm/v/mcp-installer) ![NPM Downloads](https://img.shields.io/npm/d18m/mcp-installer)
 
 > 本项目基于 [smithery-ai/cli](https://github.com/smithery-ai/cli) 开发，主要增加了新的命令并修改了原有的 install 命令。
 
