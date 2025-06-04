@@ -1,12 +1,12 @@
 {
-	"name": "@smithery/cli",
-	"version": "1.2.7",
+	"name": "mcp-cli",
+	"version": "1.0.0",
 	"type": "commonjs",
 	"private": false,
-	"homepage": "https://smithery.ai/",
+	"homepage": "https://mcp.higress.ai/",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/smithery-ai/cli.git"
+		"url": "git+https://github.com/JayLi52/mcp-cli.git"
 	},
 	"description": "A NPX command to install and list Model Context Protocols from Smithery",
 	"main": "dist/index.js",

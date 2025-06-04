@@ -15,6 +15,7 @@ import type { ServerConfig } from "./types/registry"
 import { ensureApiKey, promptForApiKey } from "./utils/runtime"
 import { build } from "./commands/build"
 import { setApiKey } from "./smithery-config"
+import { installServerForClient } from "./commands/installServerForClient"
 
 const program = new Command()
 
@@ -37,7 +38,7 @@ program
 
 // Install command
 program
-	.command("install <server>")
+	.command("default-install <server>")
 	.description("Install a package")
 	.requiredOption(
 		"--client <name>",
@@ -315,6 +316,37 @@ program
 			console.error(chalk.gray(errorMessage))
 			process.exit(1)
 		}
+	})
+
+// Pure-install command
+program
+	.command("install <qualifiedName>")
+	.description("Install a package for a specific client (skip registry and API key checks, only local configuration)")
+	.requiredOption(
+		"--client <name>",
+		`指定 AI client（${VALID_CLIENTS.join(", ")}）`
+	)
+	.requiredOption("--config <json>", "以 JSON 格式提供 server 配置")
+	.action(async (qualifiedName, options) => {
+		console.log("options", options, "qualifiedName", qualifiedName)
+		const client = options.client
+		let serverConfig: any = {}
+		try {
+			let rawConfig = options.config
+			if (rawConfig.startsWith("'") && rawConfig.endsWith("'")) {
+				rawConfig = rawConfig.slice(1, -1)
+			}
+			let parsedConfig = JSON.parse(rawConfig)
+			if (typeof parsedConfig === "string") {
+				parsedConfig = JSON.parse(parsedConfig)
+			}
+			serverConfig = parsedConfig
+		} catch (error) {
+			const errorMessage = error instanceof Error ? error.message : String(error)
+			console.error(chalk.red(`配置解析失败: ${errorMessage}`))
+			process.exit(1)
+		}
+		await installServerForClient({ client, qualifiedName, serverConfig })
 	})
 
 // Parse arguments and run
