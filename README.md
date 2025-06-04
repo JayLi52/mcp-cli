@@ -1,5 +1,7 @@
 # Smithery CLI ![NPM Version](https://img.shields.io/npm/v/%40smithery%2Fcli) ![NPM Downloads](https://img.shields.io/npm/dt/%40smithery%2Fcli)
 
+> 本项目基于 [smithery-ai/cli](https://github.com/smithery-ai/cli) 开发，主要增加了新的命令并修改了原有的 install 命令。
+
 The Smithery registry installer and manager for Model Context Protocol (MCP) servers, designed to be client-agnostic.
 
 ## Requirements
